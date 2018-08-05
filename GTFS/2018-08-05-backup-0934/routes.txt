@@ -1,0 +1,8 @@
+agency_id,route_color,route_id,route_long_name,route_short_name,route_text_color,route_type
+CITIBUS,A02179,CITIBUS007,Navette gratuite du centre-ville de Narbonne,La Citadine,FFFFFF,3
+CITIBUS,9568AA,CITIBUS006,St-Jean St-Pierre - Cinémas,DIM,FFFFFF,3
+CITIBUS,DA84B5,CITIBUS005,Réveillon - Bonne Source,E,FFFFFF,3
+CITIBUS,EB333C,CITIBUS004,Crabit - Montesquieu,D,FFFFFF,3
+CITIBUS,FAB33F,CITIBUS003,Pech d'Alcy - Route de Cuxac - Les Halles,C,000000,3
+CITIBUS,2BA5D0,CITIBUS002,Centre Commercial la Coupe - Bonne Source,B,FFFFFF,3
+CITIBUS,82BC5A,CITIBUS001,St-Jean St-Pierre - Bonne Source,A,FFFFFF,3

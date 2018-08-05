@@ -1,5 +1,5 @@
 //const stopsfile = 'GTFS/stops.txt';
-const UID_leastchars = 4;
+const UID_leastchars = 1;
 const UID_maxchars = 8;
 
 // #########################################
@@ -25,11 +25,11 @@ $("#stops-table").tabulator({
 	columns:[ //Define Table Columns
 		// stop_id,stop_name,stop_lat,stop_lon,zone_id,wheelchair_boarding
 		{rowHandle:true, formatter:"handle", headerSort:false, frozen:true, width:30, minWidth:30},
-		{title:"stop_id", field:"stop_id", frozen:true, headerFilter:"input", validator:["string", "minLength:3"] },
+		{title:"stop_id", field:"stop_id", frozen:true, headerFilter:"input", validator:["string", "minLength:2"] },
 		{title:"stop_name", field:"stop_name", editor:"input", headerFilter:"input", validator:["required","string", "minLength:3"], bottomCalc:stopsTotal },
 		{title:"stop_lat", field:"stop_lat", headerSort:false },
 		{title:"stop_lon", field:"stop_lon", headerSort:false },
-		{title:"zone_id", field:"zone_id", editor:"input", validator:["string", "minLength:3"] },
+		{title:"zone_id", field:"zone_id", editor:"input", validator:["string", "minLength:2"] },
 		{title:"wheelchair_boarding", field:"wheelchair_boarding", editor:"select", editorParams:{0:"No (0)", 1:"Yes (1)"}, headerSort:false }
 	],
 	rowSelected:function(row){ //when a row is selected
@@ -98,7 +98,9 @@ getPythonStops();
 var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
 var MBAttrib = '&copy; ' + osmLink + ' Contributors & <a href="https://www.mapbox.com/about/maps/">Mapbox</a>';
 var mapboxUrl = 'https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
-var scenicUrl = 'https://api.mapbox.com/styles/v1/nikhilsheth/cj8rdd7wu45nl2sps9teusbbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmlraGlsc2hldGgiLCJhIjoiQTREVlJuOCJ9.YpMpVVbkxOFZW-bEq1_LIw' ; 
+//var scenicUrl = 'https://api.mapbox.com/styles/v1/nikhilsheth/cj8rdd7wu45nl2sps9teusbbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmlraGlsc2hldGgiLCJhIjoiQTREVlJuOCJ9.YpMpVVbkxOFZW-bEq1_LIw' ; 
+//var scenicUrl = 'http://a.tiles.mapbox.com/v4/mapbox.mapbox-streets-v7/{z}/{x}/{y}.mvt?access_token=pk.eyJ1IjoibmlraGlsc2hldGgiLCJhIjoiQTREVlJuOCJ9.YpMpVVbkxOFZW-bEq1_LIw'
+var scenicUrl = 'https://api.mapbox.com/styles/v1/slaymd/cjkf6fj5x0ipa2rtcto8vb5rc/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2xheW1kIiwiYSI6ImNqY3RnNWh5ajB0Znoyd281eXVnZjNoMnkifQ.EyiViT10PCeeMb3t2Ov-6A'
 
 var MBdark = L.tileLayer(mapboxUrl, {id: 'nikhilsheth.jme9hi44', attribution: MBAttrib });
 var scenic = L.tileLayer(scenicUrl, { attribution: MBAttrib });

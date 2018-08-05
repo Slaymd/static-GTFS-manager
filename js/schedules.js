@@ -69,7 +69,6 @@ $("#trips-table").tabulator({
 		$('#chosenTrip').html('<big><span class="badge label-green">' + tripname + ' <small>(' + chosenTrip + ')</small></span></big>');
 		$("#stop-times-table").tabulator('clearData'); // on changing selection, clear the stop_times table in Timings tab.
 		$('#loadTimingsStatus').html('');
-
 		// load up start time if in the format 
 	},
 	rowDeselected:function(row){

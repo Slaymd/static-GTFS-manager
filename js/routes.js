@@ -37,8 +37,8 @@ $("#routes-table").tabulator({
 	columns:[
 		{rowHandle:true, formatter:"handle", headerSort:false, frozen:true, width:30, minWidth:30 },
 		{title:"Num", width:40, formatter: "rownum",  frozen:true,}, // row numbering
-		{title:"route_id", field:"route_id", frozen:true, headerFilter:"input", headerFilterPlaceholder:"filter by id", validator:["string", "minLength:2"] },
-		{title:"route_short_name", field:"route_short_name", editor:"input", headerFilter:"input", headerFilterPlaceholder:"filter by name", validator:["required","string", "minLength:2"] },
+		{title:"route_id", field:"route_id", frozen:true, headerFilter:"input", headerFilterPlaceholder:"filter by id", validator:["string", "minLength:0"] },
+		{title:"route_short_name", field:"route_short_name", editor:"input", headerFilter:"input", headerFilterPlaceholder:"filter by name", validator:["string"] },
 		{title:"route_long_name", field:"route_long_name", editor:"input", headerFilter:"input", headerFilterPlaceholder:"filter by name", bottomCalc:routesTotal },
 		{title:"route_type", field:"route_type", editor:"select", editorParams:route_type_options, formatter:"lookup", formatterParams:route_type_lookup, headerSort:false },
 		{title:"route_color", field:"route_color", headerSort:false, editor:"input" },
@@ -133,7 +133,7 @@ $("#sequence-1-table").tabulator({
 var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
 var MBAttrib = '&copy; ' + osmLink + ' Contributors & <a href="https://www.mapbox.com/about/maps/">Mapbox</a>';
 var mapboxUrl = 'https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png';
-var scenicUrl = 'https://api.mapbox.com/styles/v1/nikhilsheth/cj8rdd7wu45nl2sps9teusbbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmlraGlsc2hldGgiLCJhIjoiQTREVlJuOCJ9.YpMpVVbkxOFZW-bEq1_LIw' ; 
+var scenicUrl = 'https://api.mapbox.com/styles/v1/slaymd/cjkf6fj5x0ipa2rtcto8vb5rc/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2xheW1kIiwiYSI6ImNqY3RnNWh5ajB0Znoyd281eXVnZjNoMnkifQ.EyiViT10PCeeMb3t2Ov-6A'
 
 var MBdark = L.tileLayer(mapboxUrl, {id: 'nikhilsheth.jme9hi44', attribution: MBAttrib });
 var scenic0 = L.tileLayer(scenicUrl, { attribution: MBAttrib });
